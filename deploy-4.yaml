@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kociuba-app-5
+  labels: 
+    app: kociuba-app-5
+    kociubaLabel: kociuba-app-5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kociuba-app-5
+  template:
+    metadata:
+      labels:
+        app: kociuba-app-5
+    spec:
+      containers:
+      - name: kociuba-app-5
+        image: docker.io/lkociuba/demo-java-app:4.0
+        resources: {}
+        ports:
+        - containerPort: 8080
